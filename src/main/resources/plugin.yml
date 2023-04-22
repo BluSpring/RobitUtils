@@ -1,0 +1,10 @@
+name: RobitUtils
+main: xyz.bluspring.robitutils.RobitUtils
+version: 1.0-SNAPSHOT
+api-version: 1.17
+depend:
+  - CommandAPI
+permissions:
+  robitutils.forge:
+    default: false
+    description: Sets it so you can forge licenses.

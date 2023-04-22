@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.20'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group 'xyz.bluspring'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        name 'papermc'
+        url 'https://papermc.io/repo/repository/maven-public/'
+    }
+    maven { url "https://jitpack.io" }
+    maven { url "https://repo.codemc.org/repository/maven-public/" }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    compileOnly group: 'io.papermc.paper', name: 'paper-api', version: '1.17-R0.1-SNAPSHOT'
+    compileOnly "dev.jorel.CommandAPI:commandapi-core:6.0.0"
+    implementation "com.github.kittinunf.fuel:fuel-gson:2.3.1"
+}
+
+test {
+    useJUnitPlatform()
+}
